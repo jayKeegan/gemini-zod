@@ -83,6 +83,7 @@ export function toGeminiSchema(zodSchema: any): any {
         },
         zodSchema,
       );
+    case 'ZodDefault':
     case 'ZodNullable':
     case 'ZodOptional':
       const innerSchema = toGeminiSchema(zodSchema._def.innerType);
