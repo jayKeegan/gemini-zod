@@ -78,6 +78,18 @@ describe('toGeminiSchema', () => {
       nullable: false,
     });
   });
+  
+  test('converts ZodLiteral to Gemini schema', () => {
+    const zodSchema = z.literal('hello');
+
+    const geminiSchema = toGeminiSchema(zodSchema);
+
+    expect(geminiSchema).toEqual({
+      type: SchemaType.STRING,
+      enum: ['hello'],
+      nullable: false,
+    });
+  });
 });
 
 describe('toZodSchema', () => {

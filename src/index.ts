@@ -93,6 +93,14 @@ export function toGeminiSchema(zodSchema: any): any {
         },
         zodSchema,
       );
+    case 'ZodLiteral':
+      return decorateGeminiSchema(
+        {
+          type: SchemaType.STRING,
+          enum: [zodSchema._def.value],
+        },
+        zodSchema,
+      );
     default:
       return decorateGeminiSchema(
         {
