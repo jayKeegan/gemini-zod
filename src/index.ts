@@ -98,7 +98,7 @@ export function toGeminiSchema(zodSchema: any): any {
       return decorateGeminiSchema(
         {
           type: SchemaType.STRING,
-          enum: [zodSchema._def.value],
+          enum: zodSchema.def.values,
         },
         zodSchema,
       );

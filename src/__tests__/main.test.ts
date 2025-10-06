@@ -108,7 +108,7 @@ describe('toZodSchema', () => {
     const zodSchema = toZodSchema(geminiSchema);
 
     expect(zodSchema).toBeInstanceOf(z.ZodObject);
-    const castedZodSchema = zodSchema as z.ZodObject<any, any, any>;
+    const castedZodSchema = zodSchema as z.ZodObject<any, any>;
     expect(castedZodSchema.shape.name).toBeInstanceOf(z.ZodString);
     expect(castedZodSchema.shape.age).toBeInstanceOf(z.ZodNumber);
     expect(castedZodSchema.shape.isStudent).toBeInstanceOf(z.ZodBoolean);
@@ -151,7 +151,7 @@ describe('toZodSchema', () => {
     const zodSchema = toZodSchema(geminiSchema);
 
     expect(zodSchema).toBeInstanceOf(z.ZodObject);
-    const castedZodSchema = zodSchema as z.ZodObject<any, any, any>;
+    const castedZodSchema = zodSchema as z.ZodObject<any, any>;
     expect(castedZodSchema.shape.user).toBeInstanceOf(z.ZodObject);
     expect(castedZodSchema.shape.scores).toBeInstanceOf(z.ZodArray);
     expect(

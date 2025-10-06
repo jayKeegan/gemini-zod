@@ -15,5 +15,5 @@ export enum SchemaType {
   
     // Helper function to check the type of Zod schema
 export function getZodType(schema: any): string {
-    return schema._def.typeName;
+    return schema.constructor.name;
 }
